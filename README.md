@@ -1,121 +1,17 @@
 SC2002 Internship Placement Management System (IPMS)
+
 UML Class Diagram | Sequence Diagrams | SOLID Design Principles | OOP Concepts | Java
+
 Team: Pang Lu Hiang Victor  | Lim Kwan Yit, Calvin | Teo Kok Wei, Oscar | Kannaiyan Ishwaryaa | Low Hong Wei
+ 
  Docs: Report | UML Class Diagram | JavaDocs | Test Cases
+
 
 Project Overview
 The SC2002 Internship Management System (IMS) is a Java-based application developed as part of the SC2002 Object-Oriented Design & Programming course. The system streamlines the internship placement workflow for Students, Company Representatives, and Career Centre Staff, providing features such as:
 User authentication & role-based menus
 
 
-Internship opportunity creation & approval
-
-
-Student internship application
-
-
-Visibility controls for internship listings
-
-
-Validation, approval workflows, and business rules enforcement
-The system is architected with strong emphasis on encapsulation, abstraction, polymorphism, inheritance, and SOLID principles, ensuring modularity, maintainability, and extensibility.
-Table of Contents
-Project Overview
-Project Structure
-Setup Instructions 
-Using Terminal
-System Design
-OOP Principles
-SOLID Principles
-Design Trade-offs
-UML & Sequence Diagrams
-Test Cases & Results
-Additional Features
-Reflection
-Possible Future Improvements
-Project Structure
-2002Project/
-├── src/
-│   ├── entity/                 # Domain models
-│   │   ├── User.java
-│   │   ├── Student.java
-│   │   ├── CompanyRepresentative.java
-│   │   ├── CareerCenterStaff.java
-│   │   ├── InternshipOpportunity.java
-│   │   ├── Application.java
-│   │   └── [Enums]
-│   ├── repository/            # Data access interfaces & implementations
-│   │   ├── IUserRepository.java
-│   │   ├── UserRepository.java
-│   │   ├── IInternshipRepository.java
-│   │   ├── InternshipRepository.java
-│   │   ├── IApplicationRepository.java
-│   │   └── ApplicationRepository.java
-│   ├── service/               # Business logic
-│   │   ├── IAuthenticationService.java
-│   │   ├── AuthenticationService.java
-│   │   ├── IStudentService.java
-│   │   ├── StudentService.java
-│   │   ├── ICompanyRepService.java
-│   │   ├── CompanyRepService.java
-│   │   ├── IStaffService.java
-│   │   └── StaffService.java
-│   ├── controller/            # Request handlers
-│   │   ├── AuthenticationController.java
-│   │   ├── StudentController.java
-│   │   ├── CompanyRepController.java
-│   │   └── StaffController.java
-│   ├── boundary/              # User interface (CLI menus)
-│   │   ├── MainMenu.java
-│   │   ├── StudentMenu.java
-│   │   ├── CompanyRepMenu.java
-│   │   └── StaffMenu.java
-│   └── Main.java  # Main application entry point
-├── sample_staff_list.csv      # Sample user data
-├── sample_student_list.csv
-├── sample_company_representative_list.csv
-├── UML_COMPLETE.puml          # Complete UML class diagram
-├── QUICK_START.md             # Quick start guide
-└── README.md                  # This file
-
-
-
-Setup Instructions
-Using terminal:
-cd (file path)javac -d ../bin **/*.java
-cd ..
-java -cp bin Main
-
-You should now be able to access the IPMS system through the command-line interface.
-
-System Design
-Object Oriented Design Principles:
-Encapsulation
-The system follows the Boundary–Controller–Entity (BCE) model:
-Boundary classes: Handle CLI user interaction
-
-
-Controller classes: Coordinate user requests and delegate to services
-
-
-Entity classes: Represent structured domain data
-
-
-Service classes: Contain business logic
- This separation prevents unintended cross-layer interference and maintains loose coupling.
-
-
-Inheritance
-A base abstract User class stores common attributes (ID, name, password).
- Subclasses extend it:
-Student
-
-
-CompanyRepresentative
-
-
-CareerCenterStaff 
-This promotes code reuse and consistency.
 
 
 Polymorphism
