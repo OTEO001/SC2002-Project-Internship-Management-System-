@@ -3,6 +3,7 @@ SC2002 Internship Placement Management System (IPMS)
 UML Class Diagram | Sequence Diagrams | SOLID Design Principles | OOP Concepts | Java
 
 Team: Pang Lu Hiang Victor  | Lim Kwan Yit, Calvin | Teo Kok Wei, Oscar | Kannaiyan Ishwaryaa | Low Hong Wei
+
  
  Docs: Report | UML Class Diagram | JavaDocs | Test Cases
 
@@ -111,4 +112,6 @@ UML and BCE modelling reinforced structural clarity
 Future Improvements: 
 Implementing a GUI to replace CLI for better UX
 Adding automated testing (JUnit) for earlier bug detection
+
+Default password for all users is password123
 
