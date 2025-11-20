@@ -1,0 +1,4 @@
+CompanyRepID,Name,CompanyName,Department,Position,Email,Status
+CR001,Alice Tan,TechCorp,HR,Manager,alice.tan@techcorp.com,Pending
+CR002,Bob Lee,DataSoft,Recruitment,Recruiter,bob.lee@datasoft.com,Pending
+CR003,Carol Wong,CloudNet,Engineering,Lead Engineer,carol.wong@cloudnet.com,Pending
