@@ -13,7 +13,7 @@ The SC2002 Internship Management System (IMS) is a Java-based application develo
 User authentication & role-based menus
 
 
-Default password for all users is password123
+**Default password for all users is password123**
 
 
 
