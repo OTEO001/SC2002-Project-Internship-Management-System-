@@ -123,21 +123,26 @@ public class UserRepository implements IUserRepository {
     }
 
     public void saveToCSV() {
-        try (PrintWriter pw = new PrintWriter(new FileWriter(dataFilePath))) {
-            pw.println("UserID,Name,Password,Email,Role,Extra1,Extra2,Extra3,Extra4");
-            
+        // Save students to their file
+        try (PrintWriter pw = new PrintWriter(new FileWriter("data/sample_student_list.csv"))) {
+            pw.println("UserID,Name,Password,Email,Role,Major,YearOfStudy");
             for (User user : users.values()) {
                 if (user instanceof Student) {
                     Student s = (Student) user;
                     pw.printf("%s,%s,%s,%s,Student,%s,%d%n",
                             s.getUserId(), s.getName(), s.getPassword(), s.getEmail(),
                             s.getMajor(), s.getYearOfStudy());
-                } else if (user instanceof CompanyRepresentative) {
-                    CompanyRepresentative rep = (CompanyRepresentative) user;
-                    pw.printf("%s,%s,%s,%s,CompanyRep,%s,%s,%s,%b%n",
-                            rep.getUserId(), rep.getName(), rep.getPassword(), rep.getEmail(),
-                            rep.getCompanyName(), rep.getPosition(), rep.getDepartment(), rep.isApproved());
-                } else if (user instanceof CareerCenterStaff) {
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error saving student data: " + e.getMessage());
+        }
+        
+        // Save staff to their file
+        try (PrintWriter pw = new PrintWriter(new FileWriter("data/sample_staff_list.csv"))) {
+            pw.println("UserID,Name,Password,Email,Role,Department");
+            for (User user : users.values()) {
+                if (user instanceof CareerCenterStaff) {
                     CareerCenterStaff staff = (CareerCenterStaff) user;
                     pw.printf("%s,%s,%s,%s,Staff,%s%n",
                             staff.getUserId(), staff.getName(), staff.getPassword(), staff.getEmail(),
@@ -145,10 +150,25 @@ public class UserRepository implements IUserRepository {
                 }
             }
         } catch (IOException e) {
-            System.err.println("Error saving user data: " + e.getMessage());
+            System.err.println("Error saving staff data: " + e.getMessage());
+        }
+        
+        // Save company reps to their file
+        try (PrintWriter pw = new PrintWriter(new FileWriter("data/sample_company_representative_list.csv"))) {
+            pw.println("UserID,Name,Password,Email,Role,CompanyName,Position,Department,Status");
+            for (User user : users.values()) {
+                if (user instanceof CompanyRepresentative) {
+                    CompanyRepresentative rep = (CompanyRepresentative) user;
+                    pw.printf("%s,%s,%s,%s,CompanyRep,%s,%s,%s,%b%n",
+                            rep.getUserId(), rep.getName(), rep.getPassword(), rep.getEmail(),
+                            rep.getCompanyName(), rep.getPosition(), rep.getDepartment(), rep.isApproved());
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error saving company representative data: " + e.getMessage());
         }
     }
-
+    
     @Override
     public void save(User user) {
         users.put(user.getUserId(), user);
