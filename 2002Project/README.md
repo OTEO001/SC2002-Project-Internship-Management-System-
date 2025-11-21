@@ -8,7 +8,7 @@
 
 **Team:** Pang Lu Hiang Victor | Lim Kwan Yit, Calvin | Teo Kok Wei, Oscar | Kannaiyan Ishwaryaa | Low Hong Wei
 
-**Docs:** [Report](report/) | [UML Class Diagram](diagrams/) | [JavaDocs](docs/) | [Test Cases](#test-cases--results)
+**Docs:** [Report](new_folder/) | [UML Class Diagram](diagrams/) | [JavaDocs](docs/) | [Test Cases](#test-cases--results)
 
 ---
 
