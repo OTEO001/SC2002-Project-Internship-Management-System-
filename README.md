@@ -265,8 +265,7 @@ Additional test cases are provided in the repository.
 
 - Implementing a **GUI** to replace CLI for better UX
 - Adding **automated testing (JUnit)** for earlier bug detection
-- Migrating from **CSV to database** for better data management
-- Enhanced **security features** (password hashing, session management)
+
 
 ---
 
