@@ -7,12 +7,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         // Initialize Repositories
-        // Note: Update this path to match your project location or use relative path
-        String dataFilePath = "data/sample_staff_list.csv";  // Relative path from project root
+        String dataFilePath = "data/";  // Data directory path
         IUserRepository userRepository = new UserRepository(dataFilePath);
         IInternshipRepository internshipRepository = new InternshipRepository();
         IApplicationRepository applicationRepository = new ApplicationRepository();
         IPendingRepRepository pendingRepRepository = new PendingRepRepository();
+
 
         // Initialize Services (Dependency Injection)
         IAuthenticationService authenticationService = new AuthenticationService(userRepository);
